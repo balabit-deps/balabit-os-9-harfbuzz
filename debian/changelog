@@ -1,3 +1,21 @@
+harfbuzz (2.7.4-1ubuntu3.2) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: resource consumption via consecutive marks
+    - debian/patches/CVE-2023-25193-pre1.patch: refactor
+      skippy_iter.match() in src/hb-ot-layout-gsubgpos.hh.
+    - debian/patches/CVE-2023-25193-1.patch: avoid O(n^2) behavior in
+      mark-attachment in src/hb-ot-layout-gsubgpos.hh,
+      src/hb-ot-layout-gpos-table.hh.
+    - debian/patches/CVE-2023-25193-2.patch: optimize
+      _infos_set_glyph_flags to avoid O(n^2) behavior in src/hb-buffer.hh.
+    - debian/patches/CVE-2023-25193-3.patch: fix up previous commit in
+      src/hb-buffer.hh.
+    - debian/patches/CVE-2023-25193-4.patch: fix assert fail introduced
+      recently in src/hb-ot-layout-gpos-table.hh.
+    - CVE-2023-25193
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 30 Jan 2025 13:07:47 -0500
+
 harfbuzz (2.7.4-1ubuntu3.1) jammy-security; urgency=medium
 
   * SECURITY UPDATE: DoS via integer overflow
